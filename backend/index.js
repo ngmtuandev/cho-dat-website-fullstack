@@ -1,6 +1,7 @@
 const express = require("express");
 require("dotenv").config();
 const cors = require("cors");
+const db_connect_ap = require("./config/connectDB");
 const app = express();
 // control access server
 app.use(
@@ -17,6 +18,9 @@ app.use(express.urlencoded({ extended: true }));
 
 // app.listen(5000, () => console.log("hello"));
 // app.use("/", (req, res) => res.send("success"));
+
+// Connect database postgres
+db_connect_ap();
 
 const PORT = process.env.PORT || 8080;
 

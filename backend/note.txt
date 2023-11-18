@@ -1,0 +1,12 @@
+sequelize-cli : thực hiện thao tác với database bằng câu lệnh (terminal)
+
+Ví dụ : npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string
+
+migrations : là quan trọng | dùng để ánh xạ trực tiếp lên database -- migrations có gì thì bảng có đó => ánh xạ bảng lên database
+models : để xửa lý phía dưới code 
+
+// ÁNH XẠ BẢNG LÊN DATABASE
+npx sequelize-cli db:migrate
+
+// TỰ TẠO LỆNH
+tự tạo lệnh mới trong scripts hải thêm lênh 'run' lúc start
