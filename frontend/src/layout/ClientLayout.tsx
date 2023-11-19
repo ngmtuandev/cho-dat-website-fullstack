@@ -7,7 +7,6 @@ const ClientLayout = () => {
     <main className="w-[100%] h-[100%] bg-white">
       <div>
         <TopHeader></TopHeader>
-        <Banner></Banner>
       </div>
       <div>
         <Outlet></Outlet>

@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import path from "./utils/path";
 import ClientLayout from "./layout/ClientLayout";
 import { Home } from "./pages/client/index";
+import { Intro, ProductSell } from "./components";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
         >
           {/* OUTLET */}
           <Route path={path.HOME} element={<Home></Home>} />
+          <Route path={path.INTRO} element={<Intro></Intro>} />
+          <Route path={path.PRODUCTS} element={<ProductSell></ProductSell>} />
         </Route>
       </Routes>
     </div>

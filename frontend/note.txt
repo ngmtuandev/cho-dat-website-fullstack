@@ -1,0 +1,4 @@
+- tailwind-merge : cho phép viết những css tailwind giống nhau và chỉ lấy thằng cuối cùng
+{twMerge(
+        clsx(true -> lấy, className) -> merge : cái nào trùng lấy cái sau
+      )}
