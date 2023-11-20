@@ -6,3 +6,4 @@ export { default as Model } from "./common/Model";
 export { default as Banner } from "./header/Banner";
 export { default as Intro } from "./intro/Intro";
 export { default as ProductSell } from "./products-sell/ProductSell";
+export { default as InputForm } from "./form/input/InputForm";

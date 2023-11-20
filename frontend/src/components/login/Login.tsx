@@ -1,3 +1,4 @@
+import { memo } from "react";
 import useAppStore from "../../store/useAppStore";
 
 const Login = () => {
@@ -12,4 +13,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default memo(Login);

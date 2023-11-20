@@ -1,5 +1,7 @@
+import { memo } from "react";
+
 const ProductSell = () => {
   return <div>ProductSell</div>;
 };
 
-export default ProductSell;
+export default memo(ProductSell);
