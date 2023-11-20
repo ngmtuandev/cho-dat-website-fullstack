@@ -2,11 +2,19 @@ import { Routes, Route } from "react-router-dom";
 import path from "./utils/path";
 import ClientLayout from "./layout/ClientLayout";
 import { Home } from "./pages/client/index";
-import { Intro, ProductSell } from "./components";
+import { Intro, Login, ProductSell } from "./components";
+import useAppStore from "./store/useAppStore";
 
 function App() {
+  type TApp = {
+    isShowModel: boolean;
+  };
+
+  const { isShowModel } = useAppStore() as TApp;
+  console.log("isShowModel : ", isShowModel);
   return (
     <div className="">
+      {isShowModel && <Login></Login>}
       <Routes>
         {/* Client Layout sẽ luôn nằm dưới cùng và những trang con khác sẽ nằm trên :
         trang lồng trang ---- ClientLayout chỉ cần render 1 lần, và nó sẽ chứa những conponent nào dùng chung cho tất cả page 
