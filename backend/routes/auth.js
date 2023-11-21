@@ -9,9 +9,21 @@ router.post(
     joi.object({
       name: stringRequire,
       phone: numberRequire,
+      password: stringRequire,
     })
   ),
   authController.register
+);
+
+router.post(
+  "/login",
+  validateRequire(
+    joi.object({
+      phone: numberRequire,
+      password: stringRequire,
+    })
+  ),
+  authController.login
 );
 
 module.exports = router;

@@ -10,3 +10,8 @@ npx sequelize-cli db:migrate
 
 // TỰ TẠO LỆNH
 tự tạo lệnh mới trong scripts hải thêm lênh 'run' lúc start
+
+// models - index.js
+--> đại diện cho toàn bộ database - bản chất là 1 object -> mỗi bảng là 1 key {user: '...', role: '...'}
+
+// XỬ LÝ VALUE gửi đến TRỰC TIẾP TẠI models (ví dụ logic password khi đăng ký)
