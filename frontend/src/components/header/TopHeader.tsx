@@ -7,6 +7,7 @@ import clsx from "clsx";
 import NAVIGATE_LIST from "../../constans/navigate";
 import useAppStore from "../../store/useAppStore";
 import { Model } from "..";
+import { useUserStore } from "../../store/useUserStore";
 const TopHeader = () => {
   const { MdOutlineHeadphones } = icons;
 
@@ -15,6 +16,7 @@ const TopHeader = () => {
   const handlePostNew = () => {
     console.log("dsadsa");
   };
+  const {} = useUserStore();
 
   return (
     <div className="absolute">

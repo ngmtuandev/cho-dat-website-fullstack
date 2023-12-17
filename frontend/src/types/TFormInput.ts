@@ -9,4 +9,5 @@ type TFormInput = {
   validate: any;
   label: string;
   id: any;
+  
 };

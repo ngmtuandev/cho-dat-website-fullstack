@@ -7,6 +7,7 @@ import Swal from "sweetalert";
 import withCommon from "../../hocs/withCommon";
 import { useLogin } from "../../hooks/auth/useLogin";
 import useAppStore from "../../store/useAppStore";
+import { useUserStore } from "../../store/useUserStore";
 
 const ROLE = [
   {
@@ -30,6 +31,7 @@ const Model = () => {
   const { mutate: $register, isPending } = useRegister();
   const { mutate: $login } = useLogin();
   const { setShowModel } = useAppStore() as any;
+  const { setToken, token } = useUserStore();
   const {
     register,
     formState: { errors },
@@ -72,8 +74,10 @@ const Model = () => {
       $login(data, {
         onSuccess: (rs) => {
           if (rs.status == 0) {
+            console.log("token", rs?.token);
+            setToken(rs?.token);
             Swal({
-              title: "Đăng ký tài khoản thành công",
+              title: "Đăng nhập tài khoản thành công",
               text: "Vui lòng đăng nhập !",
               icon: "success",
             }).then(() => {
@@ -90,6 +94,7 @@ const Model = () => {
       });
     }
   };
+  console.log("token >>>>", token);
   return (
     <div
       onClick={(e) => e.stopPropagation()}
