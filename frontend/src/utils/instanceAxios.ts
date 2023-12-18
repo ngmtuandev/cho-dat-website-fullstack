@@ -4,10 +4,15 @@ const instanceAxios = axios.create({
   baseURL: "http://localhost:5000/api/v1/",
 });
 
-// Add a request interceptor
-axios.interceptors.request.use(
+instanceAxios.interceptors.request.use(
   function (config) {
-    // Do something before request is sent
+    let tokenUser = localStorage.getItem("user");
+    if (tokenUser) {
+      tokenUser = JSON.parse(tokenUser);
+    }
+    if (tokenUser?.state?.token) {
+      config.headers.Authorization = `Bearer ${tokenUser?.state?.token.trim()}`;
+    }
     return config;
   },
   function (error) {

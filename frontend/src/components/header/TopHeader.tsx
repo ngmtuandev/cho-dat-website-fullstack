@@ -16,7 +16,7 @@ const TopHeader = () => {
   const handlePostNew = () => {
     console.log("dsadsa");
   };
-  const {} = useUserStore();
+  const { user_current, setToken } = useUserStore();
 
   return (
     <div className="absolute">
@@ -51,10 +51,24 @@ const TopHeader = () => {
                   </ul>
                 </details>
               </li>
-              <li onClick={() => setShowModel(true, <Model></Model>)}>
-                <a>Đăng nhập</a>
-              </li>
+              {user_current?.name ? (
+                <li>
+                  <a>{user_current?.name}</a>
+                </li>
+              ) : (
+                <li onClick={() => setShowModel(true, <Model></Model>)}>
+                  <a>Đăng nhập</a>
+                </li>
+              )}
             </ul>
+            <li
+              onClick={() => {
+                window.localStorage.removeItem("user");
+                console.log("click");
+              }}
+            >
+              <a>Logout Test</a>
+            </li>
           </div>
           <div className="navbar-end gap-4">
             <div className="flex items-center gap-2">
