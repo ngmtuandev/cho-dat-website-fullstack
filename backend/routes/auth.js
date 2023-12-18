@@ -10,6 +10,7 @@ router.post(
       name: stringRequire,
       phone: numberRequire,
       password: stringRequire,
+      role: stringRequire,
     })
   ),
   authController.register

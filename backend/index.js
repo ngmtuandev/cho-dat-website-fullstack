@@ -3,11 +3,14 @@ require("dotenv").config();
 const cors = require("cors");
 const db_connect_ap = require("./config/connectDB");
 const initRoutes = require("./routes");
+
 const app = express();
 // control access server
 app.use(
   cors({
-    origin: process.env.CLIENT_URL,
+    origin: "*",
+    methods: ["POST", "PUT", "GET", "DELETE"],
+    credentials: true,
   })
 ); // app.use use when want install a middleware for app server
 
